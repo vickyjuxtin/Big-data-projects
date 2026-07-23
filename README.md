@@ -114,3 +114,130 @@ stats and are not written to disk.
   quiet module/level combination simply won't have a file yet.
 - `read_binary.py` needs the small one-line fix noted above to actually
   print decoded records.
+
+
+#week-2
+# Flipkart MapReduce Engine – Week 2
+
+## Project Overview
+The Flipkart MapReduce Engine is a simplified implementation of the MapReduce programming model using Python. The project demonstrates how large datasets can be processed by dividing the work into multiple stages such as splitting, mapping, partitioning, sorting, and reducing. It simulates the core workflow of distributed data processing used in Big Data frameworks like Hadoop.
+
+## Domain
+Flipkart E-Commerce
+
+## Objective
+To design and implement a basic MapReduce Engine that processes input data efficiently through multiple processing stages and generates the final aggregated output.
+
+## Features
+- Splits input data into smaller chunks.
+- Generates intermediate key-value pairs.
+- Partitions data using hash partitioning.
+- Sorts partitioned data.
+- Reduces grouped keys to generate final output.
+- Modular implementation using separate Python files.
+
+## Project Structure
+
+```
+week-2/
+│── master.py
+│── splitter.py
+│── mapper.py
+│── partitioner.py
+│── sorter.py
+│── reducer.py
+│── input.txt
+│── chunks/
+│── mapped/
+│── partitions/
+│── sorted/
+│── output.txt
+│── README.md
+```
+
+## Modules
+
+### master.py
+Controls the complete execution of the MapReduce Engine by calling all modules in sequence.
+
+### splitter.py
+Reads the input file and divides it into multiple chunks.
+
+### mapper.py
+Processes each chunk and produces intermediate key-value pairs.
+
+### partitioner.py
+Uses hash partitioning to distribute mapper output into partition files.
+
+### sorter.py
+Sorts each partition so identical keys are grouped together.
+
+### reducer.py
+Aggregates all values for each key and generates the final output.
+
+## Workflow
+
+1. Read input.txt
+2. Split the input into chunks
+3. Execute Mapper
+4. Partition mapper output
+5. Sort partition files
+6. Execute Reducer
+7. Generate output.txt
+
+## Technologies Used
+
+- Python 3.x
+- Visual Studio Code
+- File Handling
+- Hashing
+- MapReduce Concepts
+
+## Sample Input
+
+```
+Mobile
+Laptop
+Mobile
+TV
+Laptop
+Mobile
+Headphone
+TV
+```
+
+## Sample Output
+
+```
+Headphone 1
+Laptop 2
+Mobile 3
+TV 2
+```
+
+## How to Run
+
+Open the project in Visual Studio Code and execute:
+
+```bash
+python master.py
+```
+
+## Learning Outcomes
+
+- Understand MapReduce Architecture
+- Data Splitting
+- Mapping
+- Hash Partitioning
+- Sorting
+- Reducing
+- Modular Programming
+- Big Data Processing Concepts
+
+## Author
+
+**vignesh**
+
+**Course:** Bachelor of Computer Applications (BCA)
+
+**Subject:** Big Data Analytics Laboratory
