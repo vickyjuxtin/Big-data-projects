@@ -1,0 +1,10 @@
+Mobile	1
+Laptop	1
+Mobile	1
+TV	1
+Headphone	1
+TV	1
+Laptop	1
+Mobile	1
+Headphone	1
+TV	1
